@@ -136,6 +136,7 @@ class PromptEngine:
     def join_to_list(self, *args: Any, format_map: Union[dict, None]) -> list:
         """Join prompt components to a list of `Msg` objects."""
         prompt = []
+        # print("args-----------------",args)
         for item in args:
             if isinstance(item, list):
                 # nested processing

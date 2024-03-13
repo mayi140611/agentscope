@@ -46,14 +46,14 @@ def _get_timestamp(
 def to_openai_dict(item: dict) -> dict:
     """Convert `Msg` to `dict` for OpenAI API."""
     clean_dict = {}
-
+    # print("item------------", item)
     if "name" in item:
-        clean_dict["name"] = item["name"]
+        clean_dict["role"] = item["name"]
 
-    if "role" in item:
+    elif "role" in item:
         clean_dict["role"] = item["role"]
     else:
-        clean_dict["role"] = "assistant"
+        clean_dict["role"] = 'system'
 
     if "content" in item:
         clean_dict["content"] = item["content"]

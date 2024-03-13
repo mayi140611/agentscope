@@ -76,7 +76,7 @@ class DialogAgent(AgentBase):
             self.sys_prompt,
             self.memory.get_memory(),
         )
-
+        # print(self.sys_prompt)
         # call llm and generate response
         response = self.model(prompt).text
         msg = Msg(self.name, response)
